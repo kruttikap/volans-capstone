@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import * as firebase from 'firebase';
+import {createStore} from 'redux';
+import rootReducer from './redux/rootReducer';
 
 const firebaseConfig = {
     apiKey: "AIzaSyDuscLxYQLKCui3duGTm18JSuVto7WryyM",
@@ -17,6 +19,10 @@ const firebaseConfig = {
   };
 
 firebase.initializeApp(firebaseConfig);
+
+var database = firebase.database();
+
+let store = createStore(rootReducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
