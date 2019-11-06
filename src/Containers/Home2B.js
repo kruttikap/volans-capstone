@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { makeStyles } from '@material-ui/core/styles';
+import { fade, makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -16,12 +16,14 @@ import Link from '@material-ui/core/Link';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import Container from '@material-ui/core/Container';
+import MenuRoundedIcon from '@material-ui/icons/MenuRounded'; 
 
-import Login2B from './Login2B';
+// import Login2B from './Login2B';
 import Navbar2C from '../Components/Navbar2C';
 import Shopby2C from '../Components/Shopby2C';
 import Recomm2C from '../Components/Recomm2C';
 import Footer from '../Components/Footer';
+import InputBase from '@material-ui/core/InputBase';
 // import Markdown from './Markdown';
 // import post1 from './blog-post.1.md';
 // import post2 from './blog-post.2.md';
@@ -109,6 +111,41 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(8),
     padding: theme.spacing(6, 0),
   },
+   search: {
+    position: 'relative',
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: fade(theme.palette.common.white, 0.15),
+    '&:hover': {
+      backgroundColor: fade(theme.palette.common.white, 0.25),
+    },
+    marginRight: theme.spacing(2),
+    marginLeft: 0,
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: theme.spacing(3),
+      width: 'auto',
+    },
+  },
+  searchIcon: {
+    width: theme.spacing(7),
+    height: '100%',
+    position: 'absolute',
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  inputRoot: {
+    color: 'inherit',
+  },
+  inputInput: {
+    padding: theme.spacing(1, 1, 1, 7),
+    transition: theme.transitions.create('width'),
+    width: '100%',
+    [theme.breakpoints.up('md')]: {
+      width: 200,
+    },
+  },
 }));
 
 const sections = [
@@ -119,9 +156,6 @@ const sections = [
   'Politics',
   'Opinion',
   'Science',
-  'Health',
-  'Style',
-  'Travel',
 ];
 
 const featuredPosts = [
@@ -141,22 +175,9 @@ const featuredPosts = [
 
 // const posts = [post1, post2, post3];
 
-const archives = [
-  'March 2020',
-  'February 2020',
-  'January 2020',
-  'December 2019',
-  'November 2019',
-  'October 2019',
-  'September 2019',
-  'August 2019',
-  'July 2019',
-  'June 2019',
-  'May 2019',
-  'April 2019',
-];
 
-const social = ['GitHub', 'Twitter', 'Facebook'];
+
+
 
 export default function Home2B() {
   const classes = useStyles();
@@ -166,7 +187,7 @@ export default function Home2B() {
       <CssBaseline />
       <Container maxWidth="lg">
         <Toolbar className={classes.toolbar}>
-          <Button size="small">Subscribe</Button>
+            <MenuRoundedIcon />
           <Typography
             component="h2"
             variant="h5"
@@ -177,17 +198,36 @@ export default function Home2B() {
           >
            Sabkuch saste pe!
           </Typography>
-          <IconButton>
-            <SearchIcon />
-          </IconButton>
+          <div className={classes.search}>
+            <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
+            <InputBase
+              placeholder="Search…"
+              classes={{
+                root: classes.inputRoot,
+                input: classes.inputInput,
+              }}
+              inputProps={{ 'aria-label': 'search' }}
+            />
+          </div>
+
           <Button variant="outlined" size="small">
             Sign up 
           </Button>
+         
+          <Button variant="outlined" size="small">
+            Help 
+          </Button>
+          <Button variant="outlined" size="small">
+            Cart 
+          </Button>
         </Toolbar>
-        <Navbar2C />
+       
+        {/* <Navbar2C />
         <Shopby2C />
-        <Recomm2C />
-        <Footer />
+        <Recomm2C /> */}
+        
         <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
           {sections.map(section => (
             <Link
@@ -295,25 +335,25 @@ export default function Home2B() {
               <Typography variant="h6" gutterBottom className={classes.sidebarSection}>
                 Archives
               </Typography>
-              {archives.map(archive => (
+              {/* {archives.map(archive => (
                 <Link display="block" variant="body1" href="#" key={archive}>
                   {archive}
                 </Link>
-              ))}
+              ))} */}
               <Typography variant="h6" gutterBottom className={classes.sidebarSection}>
                 Social
               </Typography>
-              {social.map(network => (
+              {/* {social.map(network => (
                 <Link display="block" variant="body1" href="#" key={network}>
                   {network}
                 </Link>
-              ))}
+              ))} */}
             </Grid>
             {/* End sidebar */}
           </Grid>
         </main>
       </Container>
-      {/* Footer */}
+      Footer
       <footer className={classes.footer}>
         <Container maxWidth="lg">
           <Typography variant="h6" align="center" gutterBottom>
@@ -325,7 +365,9 @@ export default function Home2B() {
           <Copyright />
         </Container>
       </footer>
-      {/* End footer */}
+      {/* <Footer /> */}
+      End footer
+      {/* <Footer /> */}
     </React.Fragment>
   );
 }

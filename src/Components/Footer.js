@@ -49,6 +49,21 @@ export default function StickyFooter() {
           {'Pin a footer to the bottom of the viewport.'}
           {'The footer will move as the main element of the page grows.'}
         </Typography>
+
+       <ul>
+         
+            <li>Home</li>
+            <li>Visual</li> 
+            <li>Studio</li>
+            <li>Code</li>
+           
+       </ul>
+
+
+
+
+
+
         <Typography variant="body1">Sticky footer placeholder.</Typography>
       </Container>
       <footer className={classes.footer}>
@@ -60,3 +75,5 @@ export default function StickyFooter() {
     </div>
   );
 }
+
+
