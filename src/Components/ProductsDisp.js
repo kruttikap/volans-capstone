@@ -1,13 +1,5 @@
-import React, { Component } from 'react'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link as RouterLink,
-  useRouteMatch
-} from "react-router-dom";
-
-import { fade, makeStyles } from '@material-ui/core/styles';
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -24,21 +16,6 @@ import Link from '@material-ui/core/Link';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import Container from '@material-ui/core/Container';
-import MenuRoundedIcon from '@material-ui/icons/MenuRounded'; 
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import InputBase from '@material-ui/core/InputBase';
-
-
-
-// import Login2B from './Login2B';
-import Navbar2C from '../Components/Navbar2C';
-import Shopby2C from '../Components/Shopby2C';
-import Recomm2C from '../Components/Recomm2C';
-import Footer from '../Components/Footer';
-import ProductsDisp from '../Components/ProductsDisp'
-import SignInSide from './Login2B';
-import textile from '../Images/textile.jpg'
-import wood from '../Images/wood.jpeg'
 // import Markdown from './Markdown';
 // import post1 from './blog-post.1.md';
 // import post2 from './blog-post.2.md';
@@ -48,9 +25,9 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      {/* <Link color="inherit" href="https://material-ui.com/">
+      <Link color="inherit" href="https://material-ui.com/">
         Your Website
-      </Link>{' '} */}
+      </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
@@ -68,10 +45,10 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-between',
     overflowX: 'auto',
   },
-  // toolbarLink: {
-  //   padding: theme.spacing(1),
-  //   flexShrink: 0,
-  // },
+  toolbarLink: {
+    padding: theme.spacing(1),
+    flexShrink: 0,
+  },
   mainFeaturedPost: {
     position: 'relative',
     backgroundColor: theme.palette.grey[800],
@@ -126,41 +103,6 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(8),
     padding: theme.spacing(6, 0),
   },
-   search: {
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
-    },
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
-      width: 'auto',
-    },
-  },
-  searchIcon: {
-    width: theme.spacing(7),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  inputRoot: {
-    color: 'inherit',
-  },
-  inputInput: {
-    padding: theme.spacing(1, 1, 1, 7),
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: 200,
-    },
-  },
 }));
 
 const sections = [
@@ -171,56 +113,55 @@ const sections = [
   'Politics',
   'Opinion',
   'Science',
+  'Health',
+  'Style',
+  'Travel',
 ];
 
 const featuredPosts = [
   {
-    title: 'Clothing',
-    // date: 'Nov 12',
+    title: 'Featured post',
+    date: 'Nov 12',
     description:
-      'Pure organic cotton.',
-      image:textile,
-      // price: 'RS.15000/15 mts',
+      'This is a wider card with supporting text below as a natural lead-in to additional content.',
   },
   {
-    title: 'Wooden Block',
-    // date: 'Nov 11',
+    title: 'Post title',
+    date: 'Nov 11',
     description:
-      'Pure Burma Teak wood.',
-      image:wood,
-      // price: 'Rs.250000/15 blocks',
-
+      'This is a wider card with supporting text below as a natural lead-in to additional content.',
   },
 ];
 
 // const posts = [post1, post2, post3];
 
+const archives = [
+  'March 2020',
+  'February 2020',
+  'January 2020',
+  'December 2019',
+  'November 2019',
+  'October 2019',
+  'September 2019',
+  'August 2019',
+  'July 2019',
+  'June 2019',
+  'May 2019',
+  'April 2019',
+];
 
+const social = ['GitHub', 'Twitter', 'Facebook'];
 
-
-
-export default function Home2B() {
+export default function Blog() {
   const classes = useStyles();
 
   return (
+      
     <React.Fragment>
       <CssBaseline />
-
-  <Router>
-    <div>
-      <Route path="/login" component={SignInSide} />
-      {/* <Route path="/users" component={Users} /> */}
-      {/* <Route path="/contact" component={Contact} /> */}
-    </div>
-
-
-    </Router>
-
-
-
       <Container maxWidth="lg">
         <Toolbar className={classes.toolbar}>
-            <MenuRoundedIcon />
+          <Button size="small">Subscribe</Button>
           <Typography
             component="h2"
             variant="h5"
@@ -229,38 +170,15 @@ export default function Home2B() {
             noWrap
             className={classes.toolbarTitle}
           >
-           Micro Bee
+            Blog
           </Typography>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </div>
-
-         <Button variant="text" size="small" href='/login'>
-           Login & Signup 
-          </Button>
-         
-          {/* <Button variant="outlined" size="small"> */}
-            {/* Help  */}
-          {/* </Button> */}
-          <Button variant="text" size="small">
-            <ShoppingCartIcon />Cart
+          <IconButton>
+            <SearchIcon />
+          </IconButton>
+          <Button variant="outlined" size="small">
+            Sign up
           </Button>
         </Toolbar>
-       
-        {/* <Navbar2C />
-        <Shopby2C />
-        <Recomm2C /> */}
-        
         <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
           {sections.map(section => (
             <Link
@@ -287,7 +205,7 @@ export default function Home2B() {
               />
             }
             <div className={classes.overlay} />
-            <Grid container>
+            {/* <Grid container>
               <Grid item md={6}>
                 <div className={classes.mainFeaturedPostContent}>
                   <Typography component="h1" variant="h3" color="inherit" gutterBottom>
@@ -297,18 +215,18 @@ export default function Home2B() {
                     Multiple lines of text that form the lede, informing new readers quickly and
                     efficiently about what&apos;s most interesting in this post&apos;s contents.
                   </Typography>
-                  {/* <Link variant="subtitle1" href="#">
+                  <Link variant="subtitle1" href="#">
                     Continue reading…
-                  </Link> */}
+                  </Link>
                 </div>
               </Grid>
-            </Grid>
+            </Grid> */}
           </Paper>
           {/* End main featured post */}
           {/* Sub featured posts */}
-          <Grid container spacing={4}>
+          {/* <Grid container spacing={4}>
             {featuredPosts.map(post => (
-              <Grid item key={post.title} xs={12} md={3}>
+              <Grid item key={post.title} xs={12} md={6}>
                 <CardActionArea component="a" href="#">
                   <Card className={classes.card}>
                     <div className={classes.cardDetails}>
@@ -321,20 +239,16 @@ export default function Home2B() {
                         </Typography>
                         <Typography variant="subtitle1" paragraph>
                           {post.description}
-                          <Typography variant="subtitle1" color="textSecondary">
-                          {post.price}
                         </Typography>
-                        </Typography>
-                        {/* <Typography variant="subtitle1" color="primary">
+                        <Typography variant="subtitle1" color="primary">
                           Continue reading...
-                        </Typography> */}
+                        </Typography>
                       </CardContent>
                     </div>
                     <Hidden xsDown>
                       <CardMedia
                         className={classes.cardMedia}
-                        // image="https://source.unsplash.com/random"
-                        image={post.image}
+                        image="https://source.unsplash.com/random"
                         title="Image title"
                       />
                     </Hidden>
@@ -344,23 +258,23 @@ export default function Home2B() {
             ))}
           </Grid>
           {/* End sub featured posts */}
-          <Grid container spacing={5} className={classes.mainGrid}>
+          {/* <Grid container spacing={5} className={classes.mainGrid}> */}
             {/* Main content */}
-            <Grid item xs={12} md={8}>
-              {/* <Typography variant="h6" gutterBottom>
+            {/* <Grid item xs={12} md={8}>
+              <Typography variant="h6" gutterBottom>
                 From the Firehose
-              </Typography> */}
-              {/* <Divider /> */}
-              {/* {posts.map(post => (
+              </Typography>
+            <Divider /> 
+            {posts.map(post => (
                 <Markdown className={classes.markdown} key={post.substring(0, 40)}>
                   {post}
                 </Markdown>
-              ))} */}
-            </Grid>
+              ))} 
+            </Grid> */}
             {/* End main content */}
             {/* Sidebar */}
-            <Grid item xs={12} md={4}>
-              {/* <Paper elevation={0} className={classes.sidebarAboutBox}>
+            {/* <Grid item xs={12} md={4}>
+              <Paper elevation={0} className={classes.sidebarAboutBox}>
                 <Typography variant="h6" gutterBottom>
                   About
                 </Typography>
@@ -368,76 +282,41 @@ export default function Home2B() {
                   Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit
                   amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
                 </Typography>
-              </Paper> */}
-              {/* <Typography variant="h6" gutterBottom className={classes.sidebarSection}>
+              </Paper>
+              <Typography variant="h6" gutterBottom className={classes.sidebarSection}>
                 Archives
-              </Typography> */}
-              {/* {archives.map(archive => (
+              </Typography>
+              {archives.map(archive => (
                 <Link display="block" variant="body1" href="#" key={archive}>
-                  {archive}
-                </Link>
-              ))} */}
-              {/* <Typography variant="h6" gutterBottom className={classes.sidebarSection}>
+                  {archive} */}
+                {/* </Link>
+              ))}
+              <Typography variant="h6" gutterBottom className={classes.sidebarSection}>
                 Social
-              </Typography> */}
-              {/* {social.map(network => (
+              </Typography>
+              {social.map(network => (
                 <Link display="block" variant="body1" href="#" key={network}>
                   {network}
                 </Link>
-              ))} */}
-            </Grid>
+              ))}
+            </Grid> */}
             {/* End sidebar */}
-          </Grid>
-        </main>
-      </Container>
+          {/* </Grid>*/}
+        </main> 
+      </Container> 
       {/* Footer */}
       <footer className={classes.footer}>
         <Container maxWidth="lg">
           <Typography variant="h6" align="center" gutterBottom>
-            {/* Footer */}
-              <div style={{display:'flex',justifyContent:'space-around'}}>
-            <ol style={{listStyleType:'none', fontSize:'14px'}}>
-            <li><h3>About</h3></li>
-
-            <li>About Us</li>
-            <li>Help</li> 
-            <li>Contact Us</li>
-            <li>Complaints</li>
-           
-       </ol>
-
-       <ol style={{listStyleType:'none', fontSize:'14px'}}>
-            <li><h3>Help</h3></li>
-
-            <li>FAQ</li>
-            <li>Sell on</li> 
-            <li>Terms of Use</li>
-           
-       </ol>
-
-       <ol style={{listStyleType:'none', fontSize:'14px'}}>
-            <li><h3>Social</h3></li>
-
-            <li>Facebook</li>
-            <li>Twitter</li> 
-            <li>Instagram</li>
-            <li>Youtube</li>
-           
-       </ol>
-
-       
-
-       </div>
+            Footer
           </Typography>
           <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-            {/* Something here to give the footer a purpose! */}
+            Something here to give the footer a purpose!
           </Typography>
           <Copyright />
         </Container>
       </footer>
-      {/* <Footer /> */}
       {/* End footer */}
-      {/* <Footer /> */}
     </React.Fragment>
   );
 }

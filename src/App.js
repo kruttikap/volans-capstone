@@ -14,10 +14,10 @@ function App() {
       Hello World
     </Button> */}
     <Home2B />
-    <ProductDesc2B />
-    <Login2B />
-    <Cart2C />
-    <Categories2C />
+    {/* <ProductDesc2B /> */}
+    {/* <Login2B /> */}
+    {/* <Cart2C /> */}
+    {/* <Categories2C /> */}
     {/* <Search/> */}
     </div>
   );

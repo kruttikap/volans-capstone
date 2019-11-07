@@ -50,14 +50,13 @@ export default function StickyFooter() {
           {'The footer will move as the main element of the page grows.'}
         </Typography>
 
-       <ul>
-         
+       <ol style={{listStyleType:'none'}}>
             <li>Home</li>
             <li>Visual</li> 
             <li>Studio</li>
             <li>Code</li>
            
-       </ul>
+       </ol>
 
 
 
