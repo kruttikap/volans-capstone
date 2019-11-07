@@ -39,7 +39,7 @@ import ProductsDisp from '../Components/ProductsDisp'
 import SignInSide from './Login2B';
 import textile from '../Images/textile.jpg'
 import wood from '../Images/wood.jpeg'
-import Blog from '../Components/ProductsDisp'
+import ProductsDisplay from '../Components/ProductsDisp'
 import Album from './ProductDesc2B'
 import Notfound from '../Components/NotFound'
 import LoggedIn from '../Components/LoggedIn';
@@ -306,7 +306,7 @@ export default function Home2B() {
       <Switch>
       {/* <Route exact path="/" component={Home2B} /> */}
       <Route exact path="/login" component={SignInSide} />
-      <Route exact path="/prdisp" component={Album} />
+      <Route exact path="/prdisp" component={ProductsDisplay} />
       <Route exact path="/loggedin" component={LoggedIn} />
       <Route exact path="/signup" component={SignUp} />
       <Route component={Notfound} /> 

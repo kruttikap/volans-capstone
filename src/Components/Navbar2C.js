@@ -8,6 +8,8 @@ import SearchIcon from '@material-ui/icons/Search';
 import Button from '@material-ui/core/Button';
 import InputBase from '@material-ui/core/InputBase';
 import { fade, makeStyles } from '@material-ui/core/styles';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+
 
 
 
@@ -121,15 +123,13 @@ export default class Navbar2C extends Component {
             />
           </div>
 
-          <Button variant="outlined" size="small">
-            Sign up 
+          <Button variant="text" size="small" href='/login'>
+           Login & Signup 
           </Button>
          
-          <Button variant="outlined" size="small">
-            Help 
-          </Button>
-          <Button variant="outlined" size="small">
-            Cart 
+          
+          <Button variant="text" size="small">
+            <ShoppingCartIcon />Cart
           </Button>
         </Toolbar>
         
