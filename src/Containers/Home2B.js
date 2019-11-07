@@ -39,6 +39,11 @@ import ProductsDisp from '../Components/ProductsDisp'
 import SignInSide from './Login2B';
 import textile from '../Images/textile.jpg'
 import wood from '../Images/wood.jpeg'
+import Blog from '../Components/ProductsDisp'
+import Album from './ProductDesc2B'
+import Notfound from '../Components/NotFound'
+import LoggedIn from '../Components/LoggedIn';
+import SignUp from './SignUp';
 // import Markdown from './Markdown';
 // import post1 from './blog-post.1.md';
 // import post2 from './blog-post.2.md';
@@ -47,10 +52,10 @@ import wood from '../Images/wood.jpeg'
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
+      {'Copyright © SOAL '}
       {/* <Link color="inherit" href="https://material-ui.com/">
         Your Website
-      </Link>{' '} */}
+  </Link>{' '} */}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
@@ -114,13 +119,13 @@ const useStyles = makeStyles(theme => ({
     ...theme.typography.body2,
     padding: theme.spacing(3, 0),
   },
-  sidebarAboutBox: {
-    padding: theme.spacing(2),
-    backgroundColor: theme.palette.grey[200],
-  },
-  sidebarSection: {
-    marginTop: theme.spacing(3),
-  },
+  // sidebarAboutBox: {
+  //   padding: theme.spacing(2),
+  //   backgroundColor: theme.palette.grey[200],
+  // },
+  // sidebarSection: {
+  //   marginTop: theme.spacing(3),
+  // },
   footer: {
     backgroundColor: theme.palette.background.paper,
     marginTop: theme.spacing(8),
@@ -191,6 +196,96 @@ const featuredPosts = [
       // price: 'Rs.250000/15 blocks',
 
   },
+  {
+    title: 'Wooden Block',
+    // date: 'Nov 11',
+    description:
+      'Pure Burma Teak wood.',
+      image:wood,
+      // price: 'Rs.250000/15 blocks',
+
+  },
+  {
+    title: 'Wooden Block',
+    // date: 'Nov 11',
+    description:
+      'Pure Burma Teak wood.',
+      image:wood,
+      // price: 'Rs.250000/15 blocks',
+
+  },
+  {
+    title: 'Wooden Block',
+    // date: 'Nov 11',
+    description:
+      'Pure Burma Teak wood.',
+      image:wood,
+      // price: 'Rs.250000/15 blocks',
+
+  },
+  {
+    title: 'Wooden Block',
+    // date: 'Nov 11',
+    description:
+      'Pure Burma Teak wood.',
+      image:wood,
+      // price: 'Rs.250000/15 blocks',
+
+  },
+  {
+    title: 'Wooden Block',
+    // date: 'Nov 11',
+    description:
+      'Pure Burma Teak wood.',
+      image:wood,
+      // price: 'Rs.250000/15 blocks',
+
+  },
+  {
+    title: 'Wooden Block',
+    // date: 'Nov 11',
+    description:
+      'Pure Burma Teak wood.',
+      image:wood,
+      // price: 'Rs.250000/15 blocks',
+
+  },
+  {
+    title: 'Wooden Block',
+    // date: 'Nov 11',
+    description:
+      'Pure Burma Teak wood.',
+      image:wood,
+      // price: 'Rs.250000/15 blocks',
+
+  },
+  {
+    title: 'Wooden Block',
+    // date: 'Nov 11',
+    description:
+      'Pure Burma Teak wood.',
+      image:wood,
+      // price: 'Rs.250000/15 blocks',
+
+  },
+  {
+    title: 'Wooden Block',
+    // date: 'Nov 11',
+    description:
+      'Pure Burma Teak wood.',
+      image:wood,
+      // price: 'Rs.250000/15 blocks',
+
+  },
+  {
+    title: 'Wooden Block',
+    // date: 'Nov 11',
+    description:
+      'Pure Burma Teak wood.',
+      image:wood,
+      // price: 'Rs.250000/15 blocks',
+
+  },
 ];
 
 // const posts = [post1, post2, post3];
@@ -208,9 +303,14 @@ export default function Home2B() {
 
   <Router>
     <div>
-      <Route path="/login" component={SignInSide} />
-      {/* <Route path="/users" component={Users} /> */}
-      {/* <Route path="/contact" component={Contact} /> */}
+      <Switch>
+      {/* <Route exact path="/" component={Home2B} /> */}
+      <Route exact path="/login" component={SignInSide} />
+      <Route exact path="/prdisp" component={Album} />
+      <Route exact path="/loggedin" component={LoggedIn} />
+      <Route exact path="/signup" component={SignUp} />
+      <Route component={Notfound} /> 
+      </Switch>
     </div>
 
 
@@ -395,8 +495,8 @@ export default function Home2B() {
         <Container maxWidth="lg">
           <Typography variant="h6" align="center" gutterBottom>
             {/* Footer */}
-              <div style={{display:'flex',justifyContent:'space-around'}}>
-            <ol style={{listStyleType:'none', fontSize:'14px'}}>
+              <div style={{display:'flex',justifyContent:'space-around', backgroundColor:'black' }}>
+            <ol style={{listStyleType:'none', fontSize:'14px', color:'blue'}}>
             <li><h3>About</h3></li>
 
             <li>About Us</li>
@@ -406,7 +506,7 @@ export default function Home2B() {
            
        </ol>
 
-       <ol style={{listStyleType:'none', fontSize:'14px'}}>
+       <ol style={{listStyleType:'none', fontSize:'14px', color:'blue'}}>
             <li><h3>Help</h3></li>
 
             <li>FAQ</li>
@@ -415,7 +515,7 @@ export default function Home2B() {
            
        </ol>
 
-       <ol style={{listStyleType:'none', fontSize:'14px'}}>
+       <ol style={{listStyleType:'none', fontSize:'14px', color:'blue'}}>
             <li><h3>Social</h3></li>
 
             <li>Facebook</li>
