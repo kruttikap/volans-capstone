@@ -1,5 +1,12 @@
 import React from 'react';
 import './App.css';
+import SignInSide from './Containers/Login2B';
+import ProductsDisplay from './Components/ProductsDisp'
+import Notfound from './Components/NotFound'
+import LoggedIn from './Containers/LoggedIn';
+import SignUp from './Containers/SignUp';
+import ProductDescription from './Containers/ProductDesc2B';
+import Checkout from './Containers/Checkout';
 
 import {
   BrowserRouter as Router,
@@ -13,35 +20,29 @@ import {
 
 import Button from '@material-ui/core/Button';
 import Home2B from './Containers/Home2B';
-import ProductDesc2B from './Containers/ProductDesc2B';
-import Login2B from './Containers/Login2B';
-import Cart2C from './Containers/Cart2C';
-import Categories2C from './Containers/Categories2C';
-import Search from './Components/Search'
-import Blog from './Components/ProductsDisp'
+
 
 function App() {
   return (
     <div className="App">
-       {/* <Button variant="contained" color="primary">
-      Hello World
-    </Button> */}
-    <Home2B />
-{/* 
-    <Router>
-    // {/* <div> */}
-    {/* //   <Route exact path="/" component={Home2B} />
-    //   <Route exact path="/prdisp" component={Blog} /> */}
-
-
-    {/* </div> */}
-    {/* </Router> */} */}
-    {/* <ProductDesc2B /> */}
-    {/* <Login2B /> */}
-    {/* <Cart2C /> */}
-    {/* <Categories2C /> */}
-    {/* <Search/> */}
+     <Router>
+    <div>
+      <Switch>
+      <Route exact path="/" component={Home2B} />
+      <Route exact path="/login" component={SignInSide} />
+      <Route exact path="/prdisp" component={ProductsDisplay} />
+      <Route exact path="/loggedin" component={LoggedIn} />
+      <Route exact path="/signup" component={SignUp} />
+      <Route exact path="/prdesc" component={ProductDescription} />
+      <Route exact path="/checkout" component={Checkout} />
+      <Route component={Notfound} />
+      </Switch>
     </div>
+
+
+    </Router>
+    </div>
+
   );
 }
 

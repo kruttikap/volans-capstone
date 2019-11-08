@@ -48,7 +48,16 @@ import bags from '../Images/bags.jpeg'
 import beautyproducts from '../Images/beautyproducts.jpeg'
 
 
-
+// import wood from '../Images/wood.jpeg'
+import ProductsDisplay from '../Components/ProductsDisp'
+import Notfound from '../Components/NotFound'
+import LoggedIn from '../Components/LoggedIn';
+import SignUp from './SignUp';
+import ProductDescription from './ProductDesc2B';
+// import Markdown from './Markdown';
+// import post1 from './blog-post.1.md';
+// import post2 from './blog-post.2.md';
+// import post3 from './blog-post.3.md';
 
 function Copyright() {
   return (
@@ -120,6 +129,13 @@ const useStyles = makeStyles(theme => ({
     ...theme.typography.body2,
     padding: theme.spacing(3, 0),
   },
+  // sidebarAboutBox: {
+  //   padding: theme.spacing(2),
+  //   backgroundColor: theme.palette.grey[200],
+  // },
+  // sidebarSection: {
+  //   marginTop: theme.spacing(3),
+  // },
   footer: {
     backgroundColor: theme.palette.background.paper,
     marginTop: theme.spacing(8),
@@ -305,11 +321,13 @@ export default function Home2B() {
             />
           </div>
 
+          <Typography variant="h6">Hello, User</Typography>
+
          <Button variant="text" size="small" type="submit"
               halfWidth
               variant="contained"
               color="primary"href='/login'>
-           Login & Signup 
+           Logout 
           </Button>
          
          
@@ -354,7 +372,16 @@ export default function Home2B() {
             <Grid container>
               <Grid item md={6}>
                 <div className={classes.mainFeaturedPostContent}>
-                  
+                  {/* <Typography component="h1" variant="h3" color="inherit" gutterBottom>
+                    Title of a longer featured blog post
+                  </Typography>
+                  <Typography variant="h5" color="inherit" paragraph>
+                    Multiple lines of text that form the lede, informing new readers quickly and
+                    efficiently about what&apos;s most interesting in this post&apos;s contents.
+                  </Typography> */}
+                  {/* <Link variant="subtitle1" href="#">
+                    Continue reading…
+                  </Link> */}
                 </div>
               </Grid>
             </Grid>
@@ -415,7 +442,31 @@ export default function Home2B() {
             {/* End main content */}
             {/* Sidebar */}
             <Grid item xs={12} md={4}>
-              
+              {/* <Paper elevation={0} className={classes.sidebarAboutBox}>
+                <Typography variant="h6" gutterBottom>
+                  About
+                </Typography>
+                <Typography>
+                  Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit
+                  amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
+                </Typography>
+              </Paper> */}
+              {/* <Typography variant="h6" gutterBottom className={classes.sidebarSection}>
+                Archives
+              </Typography> */}
+              {/* {archives.map(archive => (
+                <Link display="block" variant="body1" href="#" key={archive}>
+                  {archive}
+                </Link>
+              ))} */}
+              {/* <Typography variant="h6" gutterBottom className={classes.sidebarSection}>
+                Social
+              </Typography> */}
+              {/* {social.map(network => (
+                <Link display="block" variant="body1" href="#" key={network}>
+                  {network}
+                </Link>
+              ))} */}
             </Grid>
             {/* End sidebar */}
           </Grid>

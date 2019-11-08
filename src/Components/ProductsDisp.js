@@ -18,6 +18,14 @@ import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
+import shirt from '../Images/shirt.jpg';
+import shirt2 from '../Images/shirt2.jpeg'
+import shirt3 from '../Images/shirt3.jpeg'
+import shirt4 from '../Images/shirt4.jpeg'
+import shirt5 from '../Images/shirt5.jpeg'
+import shirt6 from '../Images/shirt6.jpeg'
+
+
 
 
 function Copyright() {
@@ -45,8 +53,8 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(4),
   },
   cardGrid: {
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
+    paddingTop: theme.spacing(15),
+    paddingBottom: theme.spacing(6),
   },
   card: {
     height: '100%',
@@ -54,7 +62,7 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
   },
   cardMedia: {
-    paddingTop: '56.25%', // 16:9
+    paddingTop: '105%', // 16:9 56.25
   },
   cardContent: {
     flexGrow: 1,
@@ -130,7 +138,10 @@ const useStyles = makeStyles(theme => ({
 
 }));
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// const cards = [
+//   1, 2, 3, 4, 5, 6, 7, 8, 9
+// ];
+const cards=[{id:1,image:shirt},{id:2,image:shirt2},{id:2,image:shirt3},{id:2,image:shirt4},{id:2,image:shirt5},{id:2,image:shirt6}]
 
 export default function ProductsDisplay() {
   const classes = useStyles();
@@ -140,10 +151,6 @@ export default function ProductsDisplay() {
       <CssBaseline />
       <AppBar position="relative">
         <Toolbar>
-          {/* <CameraIcon className={classes.icon} />
-          <Typography variant="h6" color="inherit" noWrap>
-            Album layout
-          </Typography> */}
 
 <Container maxWidth="lg">
         <Toolbar className={classes.toolbar}>
@@ -157,7 +164,7 @@ export default function ProductsDisplay() {
             noWrap
             className={classes.toolbarTitle}
           >
-           Sabkuch saste pe!
+           Micro Bee
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -173,7 +180,7 @@ export default function ProductsDisplay() {
             />
           </div>
 
-          <Button variant="text" size="small" href='/login'>
+          <Button variant="text" size="small" href='/login' target="_blank">
            Login & Signup 
           </Button>
           <Button variant="text" size="small">
@@ -181,9 +188,6 @@ export default function ProductsDisplay() {
           </Button>
         </Toolbar>
         
-            {/* <div>
-                Navbar. Leave me at your own risk.🤚 
-            </div> */}
             </Container>
 
         </Toolbar>
@@ -192,39 +196,21 @@ export default function ProductsDisplay() {
         {/* Hero unit */}
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
-            <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-              Album layout
+            <Typography component="h6" variant="h6" align="center" color="textPrimary" gutterBottom>
+              Products 
             </Typography>
-            <Typography variant="h5" align="center" color="textSecondary" paragraph>
-              Something short and leading about the collection below—its contents, the creator, etc.
-              Make it short and sweet, but not too short so folks don&apos;t simply skip over it
-              entirely.
-            </Typography>
-            <div className={classes.heroButtons}>
-              <Grid container spacing={2} justify="center">
-                <Grid item>
-                  <Button variant="contained" color="primary">
-                    Main call to action
-                  </Button>
-                </Grid>
-                <Grid item>
-                  <Button variant="outlined" color="primary">
-                    Secondary action
-                  </Button>
-                </Grid>
-              </Grid>
-            </div>
+         
           </Container>
         </div>
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
             {cards.map(card => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
+              <Grid item key={card} m={12} sm={6} md={4}>
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
+                    image= {card.image}
                     title="Image title"
                   />
                   <CardContent className={classes.cardContent}>
@@ -236,11 +222,11 @@ export default function ProductsDisplay() {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small" color="primary">
-                      View
-                    </Button>
-                    <Button size="small" color="primary">
-                      Edit
+                    {/* <Button size="small" color="primary">
+                      ADD TO CART
+                    </Button> */}
+                    <Button size="small" color="primary" href='./prdesc'>
+                      VIEW
                     </Button>
                   </CardActions>
                 </Card>
@@ -250,15 +236,61 @@ export default function ProductsDisplay() {
         </Container>
       </main>
       {/* Footer */}
-      <footer className={classes.footer}>
-        <Typography variant="h6" align="center" gutterBottom>
+      {/* <footer className={classes.footer}>
+        {/* <Typography variant="h6" align="center" gutterBottom>
           Footer
-        </Typography>
-        <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
+        </Typography> */}
+        {/* <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
           Something here to give the footer a purpose!
-        </Typography>
+        </Typography> */}
         <Copyright />
+      {/* </footer> */} */}
+
+<footer className={classes.footer}>
+        <Container maxWidth="lg">
+          <Typography variant="h6" align="center" gutterBottom>
+            {/* Footer */}
+              <div style={{display:'flex',justifyContent:'space-around', backgroundColor:'black' }}>
+            <ol style={{listStyleType:'none', fontSize:'14px', color:'blue'}}>
+            <li><h3>About</h3></li>
+
+            <li>About Us</li>
+            <li>Help</li> 
+            <li>Contact Us</li>
+            <li>Complaints</li>
+           
+       </ol>
+
+       <ol style={{listStyleType:'none', fontSize:'14px', color:'blue'}}>
+            <li><h3>Help</h3></li>
+
+            <li>FAQ</li>
+            <li>Sell on</li> 
+            <li>Terms of Use</li>
+           
+       </ol>
+
+       <ol style={{listStyleType:'none', fontSize:'14px', color:'blue'}}>
+            <li><h3>Social</h3></li>
+
+            <li>Facebook</li>
+            <li>Twitter</li> 
+            <li>Instagram</li>
+            <li>Youtube</li>
+           
+       </ol>
+
+       
+
+       </div>
+          </Typography>
+          <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
+            {/* Something here to give the footer a purpose! */}
+          </Typography>
+          <Copyright />
+        </Container>
       </footer>
+
       {/* End footer */}
     </React.Fragment>
   );
