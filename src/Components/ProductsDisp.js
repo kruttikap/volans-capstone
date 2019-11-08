@@ -141,7 +141,7 @@ const useStyles = makeStyles(theme => ({
 // const cards = [
 //   1, 2, 3, 4, 5, 6, 7, 8, 9
 // ];
-const cards=[{id:1,image:shirt},{id:2,image:shirt2},{id:2,image:shirt3},{id:2,image:shirt4},{id:2,image:shirt5},{id:2,image:shirt6}]
+const cards=[{id:1,image:shirt,title:'No Nasties'},{id:2,image:shirt2,title:'U.S.POLO Assn.'},{id:2,image:shirt3,title:'U.S.POLO Assn.'},{id:2,image:shirt4,title:'U.S.POLO Assn.'},{id:2,image:shirt5,title:'U.S.POLO Assn.'},{id:2,image:shirt6,title:'U.S.POLO Assn.'}]
 
 export default function ProductsDisplay() {
   const classes = useStyles();
@@ -215,11 +215,11 @@ export default function ProductsDisplay() {
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Heading
+                      {card.title}
                     </Typography>
-                    <Typography>
+                    {/* <Typography>
                       This is a media card. You can use this section to describe the content.
-                    </Typography>
+                    </Typography> */}
                   </CardContent>
                   <CardActions>
                     {/* <Button size="small" color="primary">

@@ -118,6 +118,7 @@ const useStyles = makeStyles(theme => ({
   },
   card: {
     display: 'flex',
+    height: '200px'
   },
   cardDetails: {
     flex: 1,
@@ -391,7 +392,7 @@ export default function Home2B() {
           <Grid container spacing={4}>
             {featuredPosts.map(post => (
               <Grid item key={post.title} xs={12} md={3}>
-                <CardActionArea component="a" href="/prdesc">
+                <CardActionArea component="a" href="/prdisp">
                   <Card className={classes.card}>
                     <div className={classes.cardDetails}>
                       <CardContent>

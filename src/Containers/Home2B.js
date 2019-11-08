@@ -27,6 +27,7 @@ import Container from '@material-ui/core/Container';
 import MenuRoundedIcon from '@material-ui/icons/MenuRounded'; 
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import InputBase from '@material-ui/core/InputBase';
+import ProductsDisplay from '../Components/ProductsDisp';
 
 
 
@@ -64,6 +65,7 @@ function Copyright() {
 }
 
 const useStyles = makeStyles(theme => ({
+
   toolbar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
   },
@@ -109,6 +111,7 @@ const useStyles = makeStyles(theme => ({
   },
   card: {
     display: 'flex',
+    height: '200px'
   },
   cardDetails: {
     flex: 1,
@@ -364,7 +367,7 @@ export default function Home2B() {
           <Grid container spacing={4}>
             {featuredPosts.map(post => (
               <Grid item key={post.title} xs={12} md={3}>
-                <CardActionArea component="a" href="/prdesc">
+                <CardActionArea component="a" href="/prdisp">
                   <Card className={classes.card}>
                     <div className={classes.cardDetails}>
                       <CardContent>
